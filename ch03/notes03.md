@@ -55,8 +55,19 @@ Ad esempio se volessimo aggregare tutte le eta' per ogni nome e poi farne la med
 
 Questo codice dice a Spark **come fare** per aggregare le chiavi e fare il calcolo della media con le funzioni lambda. E' criptico e difficile.
 
-Questo e' il codice usando un DataFrame API, instruendo Spark su quello che **deve fare**.
+Questo e' invece il codice usando un DataFrame API, instruendo Spark su quello che **deve fare**.
 ![image](https://user-images.githubusercontent.com/77077281/195423442-c20ee204-a6f7-487b-9737-9244b92f16ce.png)
 ![image](https://user-images.githubusercontent.com/77077281/195423474-4f018aae-a259-4d1b-accc-1f5c08de0b57.png)
 
 In questo modo Spark puo' ispezionare il nostro codice e capire quello che vogliamo fare, portando l'esecuzione a miglior ottimizzazione e performance.
+
+## The Dataframe API
+I DataFrame di Spark si ispirano a i Pandas DataFrame riguardo: struttura, formato, operazioni. Sono delle specie di tabelle con nomi delle colonne e un certo schema dove ogni colonna ha un certo data type. Dataframes sono **immutabili** e Spark tiene una *discendenza* di tutte le *trasformazioni*. Le versioni precedenti sono sempre preservate.
+Lo schema di un DataFrame e' l'associazione di nome colonna con il suo corrispetivo data type di Spark.
+
+### Spark's Basic Data Type
+Spark supporta i data type tipici presenti in Python:
+![image](https://user-images.githubusercontent.com/77077281/195425694-8c7c6999-873b-4751-9500-431b1f51ec1c.png)
+
+Ma anche i data type piu' complessi:
+![image](https://user-images.githubusercontent.com/77077281/195425899-0f5c2204-3f4f-4569-b93c-9bd750ffabba.png)
