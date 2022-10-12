@@ -57,10 +57,23 @@ Le operazioni eseguibili in Spark possono essere fatte in diversi tipi di carich
 A differenza di Apache Hadoop che includeva sia lo storage che la parte di calcolo, Spark puo' leggere dati provenienti da moltissime fonte dato. Spark si concentra su quello che e' calcolo computazionale in parallelo e veloce.
 
 ## Unified Analytics
+E' possibile scrivere codice in Spark attraverso le diverse APIs che mette a disposizione: Scala, Java, R, Python, SQL. In realta' il codice che abbiamo scritto nel nostro linguaggio preferito avviene una scomposizione in *bytecode* che possa essere letto ed eseguito dai workers del nostro cluster (che sono in realta delle Java Virtual Machine).
 
+![image](https://user-images.githubusercontent.com/77077281/195358506-a973d744-7e76-4ba7-9730-7a0ceb3b5ba2.png)
 
+### SparkSQL
+Lavora bene con dati strutturati. Possiamo leggere dati che sono storati in tabelle di RDBMS o da diversi tipi di formati di file (CSV, Parquet, Json, Avro, ORC, etc.) per poi costruire delle persistenti o temporanee in Spark. Possiamo combinare queries SQL in dati che si trovano dentro dei DataFrames Spark.
 
+### Spark MLlib
+Libreria che permette di avere diversi algoritmi di Machine Learning. E' possibile estrarre e trasformare features, costruire pipeline per il training e il testing, costruire modelli in maniera persistente per poi ricaricarli.
 
+### Spark Structured Streaming
+Per sviluppatori di Big Data che hanno bisogno di combinare e interrogare dati da fontiin tempo reale a tabelle che dinamicamente continuano a crescere. E' possibile utilizzare queste tabelle come se fossero tabelle strutturate e statiche.
+
+### GrapX
+Libreria costruita per manipolare i Grafi e performare calcoli su di essi in parallelo. Offre gli algoritmi standard per analisi e connessioni sui grafi.
+
+## Apache Spark’s Distributed Execution
 
 
 
