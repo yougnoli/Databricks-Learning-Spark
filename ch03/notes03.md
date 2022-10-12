@@ -67,7 +67,9 @@ Lo schema di un DataFrame e' l'associazione di nome colonna con il suo corrispet
 
 ### Spark's Basic Data Type
 Spark supporta i data type tipici presenti in Python:
+
 ![image](https://user-images.githubusercontent.com/77077281/195425694-8c7c6999-873b-4751-9500-431b1f51ec1c.png)
 
 Ma anche i data type piu' complessi:
+
 ![image](https://user-images.githubusercontent.com/77077281/195425899-0f5c2204-3f4f-4569-b93c-9bd750ffabba.png)
