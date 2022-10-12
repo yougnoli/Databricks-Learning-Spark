@@ -48,7 +48,7 @@ Spark costruisce la sua capacita' di calcolo come un grafico aciclico diretto (*
 Questo grafo computazionale e' solitamente scomposto in task minori che vengono eseguiti in parallelo tra i vari workers del cluster.
 
 ### Facilita'
-Spark raggiunge la sua semplicita' grazie all'astrazione del dato strutturato sotto forma di Resilient Distributed Dataset (**RDD**). Ogni tipologia di dato strutturato come DataFrames o Datasets si appoggiano e sono costruiti al di sopra degli RDD.
+Spark raggiunge la sua semplicita' permettendo l'astrazione della struttura del dato dei Resilient Distributed Dataset (**RDD**). Tipologie di struttura dati come DataFrames o Datasets si appoggiano e sono costruiti al di sopra degli RDD.
 
 ### Modularita'
 Le operazioni eseguibili in Spark possono essere fatte in diversi tipi di carichi di lavoro ed espressi in diversi linguaggi di programmazione: Scala, Java, R, Python, SQL. Unisce sotto un unico engine, diversi carichi di lavoro.
@@ -93,14 +93,3 @@ I dati risiedono fiscamente in maniera partizionata nello storage HDFS o sul clo
 ![image](https://user-images.githubusercontent.com/77077281/195370594-07945f24-330f-493a-be6f-de759775487d.png)
 
 ![image](https://user-images.githubusercontent.com/77077281/195370643-c43140f2-2335-4c6c-be25-1f08e50aba49.png)
-
-
-
-
-
-
-
-
-
-
-
