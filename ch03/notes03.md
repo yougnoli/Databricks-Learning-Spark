@@ -48,27 +48,15 @@ Quindi in ognuna di queste caratteristiche degli RDDs ci sono delle zone d'ombra
 **Allora quale e' la soluzione?**
 
 ## Structuring Spark
-Da Spark 2.x sono stati implementati delle espressioni di computazioni comuni nel mondo dell'analisi dati: filtering, selecting, counting, grouping, etc. Questo aggiunge chiarezza e semplicita'. Attraverso i linguaggi supportati in Spark (Java, Python, Spark, R, e SQL) riesce a capirequello che deve fare con i dati e come risultato un ottimo piano di esecuzione. Inoltre la possibilita' di riarrangiare i dati sottoforma tabulare.
+Da Spark 2.x sono stati implementati delle espressioni di computazioni comuni nel mondo dell'analisi dati: filtering, selecting, counting, grouping, etc. Questo aggiunge chiarezza e semplicita'. Attraverso i linguaggi supportati in Spark (Java, Python, Spark, R, e SQL) riesce a capirequello che deve fare con i dati e come risultato un ottimo piano di esecuzione. Inoltre la possibilita' di riarrangiare i dati sottoforma tabulare. Questa nuova struttura restituisce migliori performance e miglior gestione dello spazio tra i vari componenti di Spark. 
 
+Ad esempio se volessimo aggregare tutte le eta' per ogni nome e poi farne la media. Usando un RDD API il codice sarebbe cosi:
+![image](https://user-images.githubusercontent.com/77077281/195423023-e7afa6bb-1881-4ce6-a5a4-22013ada030c.png)
 
+Questo codice dice a Spark **come fare** per aggregare le chiavi e fare il calcolo della media con le funzioni lambda. E' criptico e difficile.
 
+Questo e' il codice usando un DataFrame API, instruendo Spark su quello che **deve fare**.
+![image](https://user-images.githubusercontent.com/77077281/195423442-c20ee204-a6f7-487b-9737-9244b92f16ce.png)
+![image](https://user-images.githubusercontent.com/77077281/195423474-4f018aae-a259-4d1b-accc-1f5c08de0b57.png)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+In questo modo Spark puo' ispezionare il nostro codice e capire quello che vogliamo fare, portando l'esecuzione a miglior ottimizzazione e performance.
