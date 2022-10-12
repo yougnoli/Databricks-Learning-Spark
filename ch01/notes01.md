@@ -74,12 +74,25 @@ Per sviluppatori di Big Data che hanno bisogno di combinare e interrogare dati d
 Libreria costruita per manipolare i Grafi e performare calcoli su di essi in parallelo. Offre gli algoritmi standard per analisi e connessioni sui grafi.
 
 ## Apache Spark’s Distributed Execution
+Spark e' un engine di data processing che distribuisce il carico di lavoro tra i vari workers (macchine) che compongono il cluster. Spark funziona in modo master-slave. Quindi quando scriviamo un programma in Spark e lo sottomettiamo nel nostro cluster vengono avviati un **master** e uno (o piu') **slave** che eseguono l'attivita' scritta nel programma.
 
+![image](https://user-images.githubusercontent.com/77077281/195365947-80decc44-3345-4a8c-9aaf-d8bfd32bc99d.png)
 
+### Spark driver
+E' il nodo Master ed ha il compito di richiedere le risorse quando ne ha bisogno (CPU, RAM, etc.) per darle agli esecutori del cluster (i nodi Slave o Spark Executors). E' colui che trasforma tutte le operazioni di Spark in operazioni **DAG**, scomponendole, schedulandole per poi farle eseguire ai nodi Slave.
 
+### Spark Executors
+Sono coloro che eseguono i task. In questi nodi si trovano anche gli RDD (Resilient Distributed Dataset) dove poi vengono costruiti al di sopra i DataFrames e Datasets.
 
+### Spark Session
+E' il punto di ingresso per qualsiasi funzionalita' all'interno della nostra applicazione Spark (come se fosse la nostra istanza). 
 
+### Distributed data and partitions
+I dati risiedono fiscamente in maniera partizionata nello storage HDFS o sul cloud storage. Spark tratta ogni partizione di dati, distribuita sul cluster, memorizzata come un DataFrame. Il partizionamento permette un efficiente parallelizzazione e permette anche agli esecutori di Spark (i nodi slave) ad occuparsi del chunk di dati (la partizione) che e' a loro piu' vicina riducendo la latenza di esecuzione. Quindi ad ogni **core** di un esecutore e' assegnata una partizione e con quella partizione lavora.
 
+![image](https://user-images.githubusercontent.com/77077281/195370594-07945f24-330f-493a-be6f-de759775487d.png)
+
+![image](https://user-images.githubusercontent.com/77077281/195370643-c43140f2-2335-4c6c-be25-1f08e50aba49.png)
 
 
 
